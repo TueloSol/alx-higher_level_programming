@@ -1,19 +1,15 @@
-The ``4-print_square`` module
-=============================
-This module contains only one function: print_square. Error in project formatting scheme advances file numbering +1 for every task after 0: this is actually task 3.
+==================================
+The ``4-print_square.txt`` module
+==================================
 
 Using ``print_square``
-----------------------
+-----------------------
 
-First import
-~~~~~~~~~~~~
-First import ``print_square`` from the ``4-print_square`` module. Since the file name contains a numeral, you can't use the simple ``from 4-print_square import print_square``. You can instead use the following syntax:
+Import the function:
 
     >>> print_square = __import__('4-print_square').print_square
 
-Normal use
-~~~~~~~~~~
-Now print_square can be used to print a square of a given size in '#' characters:
+Now test it:
 
     >>> print_square(4)
     ####
@@ -21,37 +17,37 @@ Now print_square can be used to print a square of a given size in '#' characters
     ####
     ####
 
-Size of 0 is valid input, but results in no output:
+    >>> print_square(10)
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
 
     >>> print_square(0)
 
-Exceptions
-~~~~~~~~~~
-Size must be an int, or the TypeError 'size must be an integer' will be raised.
 
-    >>> print_square('3')
+    >>> print_square("Hello")
     Traceback (most recent call last):
-        ...
     TypeError: size must be an integer
 
-    >>> print_square(3.0)
+    >>> print_square(5.7)
     Traceback (most recent call last):
-        ...
     TypeError: size must be an integer
+
+    >>> print_square(-2)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
 
     >>> print_square(-3.0)
     Traceback (most recent call last):
-        ...
     TypeError: size must be an integer
 
     >>> print_square()
     Traceback (most recent call last):
-        ...
     TypeError: print_square() missing 1 required positional argument: 'size'
-
-Even if size is an int, it still must be 0 or greater. If not, it raises a ValueError of 'size must be >= 0':
-
-    >>> print_square(-1)
-    Traceback (most recent call last):
-        ...
-    ValueError: size must be >= 0
